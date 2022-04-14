@@ -44,7 +44,6 @@ in {
       plenary-nvim
       telescope-nvim
       telescope-symbols-nvim
-      telescope-media-files
       nvim-colorizer-lua
       nvim-treesitter
       nvim-lspconfig
