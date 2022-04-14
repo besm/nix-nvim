@@ -1,8 +1,6 @@
 { pkgs, lib, ... }:
 # partially copied from https://framagit.org/vegaelle/nix-nvim/-/blob/main/default.nix
-let
-  vim-plugins = import ./plugins.nix { inherit pkgs lib; };
-  nixos-unstable = import <unstable> { };
+let vim-plugins = import ./plugins.nix { inherit pkgs lib; };
 in {
 
   home.packages = with pkgs; [
@@ -47,11 +45,11 @@ in {
       nvim-colorizer-lua
       nvim-treesitter
       nvim-lspconfig
-      nixos-unstable.vimPlugins.lsp_extensions-nvim
+      lsp_extensions-nvim
       nvim-compe
       lspkind-nvim
-      nixos-unstable.vimPlugins.bufferline-nvim
-      nixos-unstable.vimPlugins.galaxyline-nvim
+      bufferline-nvim
+      galaxyline-nvim
       vim-closetag
       nvim-tree-lua
       vim-plugins.neoscroll-nvim
