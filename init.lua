@@ -405,16 +405,7 @@ gls.left[6] = {
     }
 }
 
--- gls.left[7] = {
---     LeftEnd = {
---         provider = function()
---             return " "
---         end,
---         separator = " ",
---         separator_highlight = {colors.line_bg, colors.line_bg},
---         highlight = {colors.line_bg, colors.line_bg}
---     }
--- }
+
 
 gls.left[7] = {
     DiagnosticError = {
@@ -424,14 +415,7 @@ gls.left[7] = {
     }
 }
 
--- gls.left[8] = {
---     Space = {
---         provider = function()
---             return " "
---         end,
---         highlight = {colors.line_bg, colors.line_bg}
---     }
--- }
+
 
 gls.left[9] = {
     DiagnosticWarn = {
@@ -496,7 +480,7 @@ gls.right[3] = {
         end,
         highlight = "GalaxyViMode",
         separator_highlight = "GalaxyViModeInvSep",
-        separator = " "
+        separator = "  "
     }
 }
 
