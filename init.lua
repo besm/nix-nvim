@@ -763,7 +763,7 @@ function _G.completions()
 end
 
 local base16 = require "base16"
-base16(base16.themes["dracula"], true)
+base16(base16.themes["onedark"], true)
 
 
 -- blankline
