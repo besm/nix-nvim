@@ -544,7 +544,7 @@ gls.right[9] = {
             return "   "
           end
         end,
-        separator = "",
+        separator = " ",
         separator_highlight = {colors.bg, colors.yellow},
         highlight = {colors.bg, colors.yellow}
     }
@@ -559,7 +559,7 @@ gls.right[10] = {
             return "   "
           end
         end,
-        separator = "",
+        separator = "n",
         separator_highlight = {colors.bg, colors.yellow},
         highlight = {colors.bg, colors.yellow}
     }
@@ -574,7 +574,7 @@ gls.right[11] = {
             return "   "
           end
         end,
-        separator = "",
+        separator = " ",
         separator_highlight = {colors.bg, colors.yellow},
         highlight = {colors.bg, colors.yellow}
     }
