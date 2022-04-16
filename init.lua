@@ -411,7 +411,7 @@ gls.left[7] = {
 }
 
 
-gls.left[9] = {
+gls.left[8] = {
     DiagnosticWarn = {
         provider = "DiagnosticWarn",
         icon = "  ",
