@@ -522,9 +522,9 @@ gls.right[8] = {
           if vim.bo.readonly then
             highlight('GalaxyReadOnly', colors.red, colors.yellow)
             return "  "
-          else
-            highlight('GalaxyReadOnly', colors.cyan, colors.yellow)
-            return "  "
+--          else
+--            highlight('GalaxyReadOnly', colors.cyan, colors.yellow)
+--           return "  "
           end
         end,
         highlight = "GalaxyReadOnly"
