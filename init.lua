@@ -491,7 +491,7 @@ gls.right[3] = {
 gls.right[6] = {
     PerCent = {
         provider = "LinePercent",
-        separator = " ",
+        separator = "",
         separator_highlight = {colors.fg, colors.bg},
         highlight = {colors.bg, colors.fg}
     }
