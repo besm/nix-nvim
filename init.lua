@@ -355,7 +355,7 @@ gls.left[1] = {
             return "  " .. require("galaxyline.providers.fileinfo").get_file_icon() .. " "
         end,
         condition = buffer_not_empty,
-        separator = " ",
+        separator = "  ",
         highlight = {require("galaxyline.providers.fileinfo").get_file_icon_color, colors.bg},
         separator_highlight = {colors.bg, colors.fg}
     }
