@@ -40,10 +40,9 @@ opt("o", "mouse", "a")
 opt("b", "spelllang", "en,fr")
 
 
-opt("w", "signcolumn", "yes")
+opt("w", "signcolumn", "no")
 opt("o", "cmdheight", 1)
 
-opt("o", "updatetime", 250) -- update interval for gitsigns
 opt("o", "clipboard", "unnamedplus")
 
 -- for indenline
@@ -59,7 +58,7 @@ opt("w", "foldnestmax", 2)  -- 2 nested fold max
 
 -- colors
 
-local bar_bg = "#002b36"
+local bar_bg = "#1D1F21"
 local activeBuffer_bg = "#657b83"
 local inactiveBuffer_bg = "#1D1F21"
 local activeBuffer_fg = "#fdf6e3"
@@ -524,7 +523,7 @@ gls.right[3] = {
 gls.right[6] = {
     PerCent = {
         provider = "LinePercent",
-        separator = "",
+        separator = "|",
         separator_highlight = {colors.fg, colors.bg},
         highlight = {colors.bg, colors.fg}
     }
@@ -593,7 +592,7 @@ gls.right[11] = {
             return "   "
           end
         end,
-        separator = "",
+        separator = "",
         separator_highlight = {colors.bg, colors.yellow},
         highlight = {colors.bg, colors.yellow}
     }
@@ -772,6 +771,8 @@ map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 map("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+
 
 function _G.completions()
     local npairs = require("nvim-autopairs")

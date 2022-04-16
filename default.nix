@@ -37,9 +37,9 @@ in {
       vim-table-mode
       editorconfig-vim
       vim-markdown
+      nvim-web-devicons
       vim-nix
       robotframework-vim
-      vim-plugins.vim-bepoptimist
       vim-plugins.nvim-base16
       popup-nvim
       plenary-nvim
