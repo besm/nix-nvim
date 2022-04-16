@@ -360,7 +360,6 @@ gls.left[1] = {
 gls.left[2] = {
     FileName = {
         provider = {"FileName"},
---      provider = {"FileName", "FileSize"},
         condition = buffer_not_empty,
         highlight = {colors.bg, colors.fg}
     }
