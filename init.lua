@@ -84,7 +84,6 @@ require "bufferline".setup {
         view = "default",
         show_buffer_close_icons = true,
         show_close_icon = false,
-        -- separator_style = "thin",
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level, diagnostics_dict)
           local icon = level:match("error") and " " or " "
@@ -522,7 +521,7 @@ gls.right[3] = {
 gls.right[6] = {
     PerCent = {
         provider = "LinePercent",
-        separator = "|",
+        separator = "",
         separator_highlight = {colors.fg, colors.bg},
         highlight = {colors.bg, colors.fg}
     }
