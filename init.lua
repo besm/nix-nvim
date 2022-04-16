@@ -90,7 +90,7 @@ require "bufferline".setup {
           return " " .. icon .. count
         end,
         separator_style = "thin",
-        offsets = {{filetype = "NvimTree", text = "File Explorer"}},
+        offsets = {{filetype = "NvimTree", text = "filez"}},
         show_tab_indicators = false
     },
     highlights = {
@@ -298,21 +298,17 @@ local gls = gl.section
 gl.short_line_list = {"NvimTree", "minimap"} -- keeping this table { } as empty will show inactive statuslines
 
 local colors = {
-    bg = "#1D1F21",
-    line_bg = "#1D1F21",
-    fg = "#839496",
-    fg_green = "#859900",
-    fg_dark = "#002b36";
-    yellow = "#b58900",
-    cyan = "#2aa198",
-    darkblue = "#268bd2",
-    green = "#859900",
-    orange = "#cb4b16",
-    purple = "#6c71c4",
-    magenta = "#d33682",
-    blue = "#268bd2",
-    red = "#dc322f",
-    lightbg = "#657b83",
+bg = '#202328',
+fg = '#bbc2cf',
+yellow = '#ECBE7B',
+cyan = '#008080',
+darkblue = '#081633',
+green = '#98be65',
+orange = '#FF8800',
+violet = '#a9a1e1',
+magenta = '#c678dd',
+blue = '#51afef';
+red = '#ec5f67';
 } 
 
 local mode_colors = {
