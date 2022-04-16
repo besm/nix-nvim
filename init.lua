@@ -522,9 +522,6 @@ gls.right[8] = {
           if vim.bo.readonly then
             highlight('GalaxyReadOnly', colors.red, colors.yellow)
             return "  "
---          else
---            highlight('GalaxyReadOnly', colors.cyan, colors.yellow)
---           return "  "
           end
         end,
         highlight = "GalaxyReadOnly"
@@ -744,12 +741,9 @@ _G.s_tab_complete = function()
 end
 
 --  mappings
-
 map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 map("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-
 
 
 function _G.completions()
@@ -855,35 +849,24 @@ end
 map("n", "<leader>Z", [[ <Cmd> lua toggle_writing_mode()<CR>]], opt)
 map("i", "<down>", "<c-\\><c-o>gj", {nowait = true, noremap = true})
 map("i", "<up>", "<c-\\><c-o>gk", {nowait = true, noremap = true})
-    
-
-
 map("n", "<F11>", [[ <Cmd> set spell!<CR>]], opt)
 map("i", "<F11>", [[ <Cmd> set spell!<CR>]], opt)
 map("n", "<F2>", [[ <Cmd>set paste!<CR>]], opt)
 map("i", "<F2>", [[ <Cmd>set paste!<CR>]], opt)
-
-
 map('n', '<C-c>', '<cmd> let @/ = ""<CR>', opt)
-
 map('n', '<leader>ç', '<cmd> MinimapToggle<CR>', opt)
 map('t', '<Esc>', '<C-\\><C-n>', opt)
 
 -- highlights --
 function set_highlights()
-
   cmd "hi LineNr guifg=#657b83 guibg=NONE"
   cmd "hi Comment guifg=#657b83"
-
   cmd "hi SignColumn guibg=NONE"
   cmd "hi VertSplit guibg=NONE guifg=#1D1F21"
   cmd "hi EndOfBuffer guifg=#1D1F21"
   cmd "hi PmenuSel guibg=#859900"
   cmd "hi Pmenu  guibg=#002b36"
-
   cmd "hi Normal guibg=NONE ctermbg=NONE"
-  -- cmd "hi Normal guibg=#002b36"
-
   cmd "hi CursorLine guibg=#1D1F21"
   cmd "hi ColorColumn guibg=#1D1F21"
 end
@@ -1047,13 +1030,6 @@ require("zen-mode").setup {
       font = "+2"
     }
   },
-  -- on_open = function(win)
-  --    cmd[[MinimapClose]]
-  -- end,
-  -- -- callback where you can add custom code when the Zen window closes
-  -- on_close = function()
-  --   cmd[[Minimap]]
-  -- end,
 }
 
 -- quick-scope
