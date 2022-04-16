@@ -359,7 +359,8 @@ gls.left[1] = {
 
 gls.left[2] = {
     FileName = {
-        provider = {"FileName", "FileSize"},
+        provider = {"FileName"},
+--      provider = {"FileName", "FileSize"},
         condition = buffer_not_empty,
         highlight = {colors.bg, colors.fg}
     }
@@ -402,7 +403,6 @@ gls.left[6] = {
 }
 
 
-
 gls.left[7] = {
     DiagnosticError = {
         provider = "DiagnosticError",
@@ -410,7 +410,6 @@ gls.left[7] = {
         highlight = {colors.red, colors.bg},
     }
 }
-
 
 
 gls.left[9] = {
@@ -424,7 +423,7 @@ gls.left[9] = {
 gls.right[1] = {
     GitIcon = {
         provider = function()
-            return "   "
+            return " "
         end,
         condition = require("galaxyline.providers.vcs").check_git_workspace,
         highlight = {colors.green, colors.line_bg}
@@ -480,14 +479,6 @@ gls.right[3] = {
     }
 }
 
- gls.right[4] = {
-     right_LeftRounded = {
-        provider = function()
-            return " "
-        end,
-        highlight = "GalaxyViModeSep",
-     }
- }
 
  gls.right[5] = {
      right_saveStatus = {
