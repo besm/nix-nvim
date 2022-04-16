@@ -372,7 +372,7 @@ gls.left[2] = {
 gls.left[3] = {
     teech = {
         provider = function()
-            return ""
+            return " "
         end,
         highlight = {colors.fg, colors.bg}
     }
