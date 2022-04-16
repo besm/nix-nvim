@@ -5,7 +5,7 @@ in {
 
   home.packages = with pkgs; [
     tree-sitter
-    nixos-unstable.code-minimap
+    code-minimap
     luaPackages.lua-lsp
     rnix-lsp
     nodePackages.vim-language-server
@@ -16,7 +16,7 @@ in {
 
   programs.neovim = {
     enable = true;
-    package = nixos-unstable.neovim-unwrapped;
+#    package = nixos-unstable.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
@@ -26,9 +26,12 @@ in {
       vim-repeat
       vim-commentary
       vim-unimpaired
+      zen-mode-nvim
       vim-sleuth
-      vim-startify
+      vim-startify # maybe lose
       vim-multiple-cursors
+      vim-eunuch
+      nvim-autopairs
       gundo-vim
       vim-easy-align
       vim-table-mode

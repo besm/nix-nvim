@@ -54,118 +54,6 @@ opt("b", "shiftwidth", 4)
 opt("o", "foldlevelstart", 50)  -- open most folds by default
 opt("w", "foldnestmax", 2)  -- 2 nested fold max
 
--- nvim-dev-webicons
-
-require "nvim-web-devicons".setup {
-     default = true;
-    override = {
-        html = {
-            icon = "",
-            color = "#DE8C92",
-            name = "html"
-        },
-        css = {
-            icon = "",
-            color = "#61afef",
-            name = "css"
-        },
-        js = {
-            icon = "",
-            color = "#EBCB8B",
-            name = "js"
-        },
-        ts = {
-            icon = "ﯤ",
-            color = "#519ABA",
-            name = "ts"
-        },
-        kt = {
-            icon = "󱈙",
-            color = "#ffcb91",
-            name = "kt"
-        },
-        png = {
-            icon = " ",
-            color = "#BD77DC",
-            name = "png"
-        },
-        jpg = {
-            icon = " ",
-            color = "#BD77DC",
-            name = "jpg"
-        },
-        jpeg = {
-            icon = " ",
-            color = "#BD77DC",
-            name = "jpeg"
-        },
-        mp3 = {
-            icon = "",
-            color = "#C8CCD4",
-            name = "mp3"
-        },
-        mp4 = {
-            icon = "",
-            color = "#C8CCD4",
-            name = "mp4"
-        },
-        out = {
-            icon = "",
-            color = "#C8CCD4",
-            name = "out"
-        },
-        Dockerfile = {
-            icon = "",
-            color = "#b8b5ff",
-            name = "Dockerfile"
-        },
-        rb = {
-            icon = "",
-            color = "#ff75a0",
-            name = "rb"
-        },
-        vue = {
-            icon = "﵂",
-            color = "#7eca9c",
-            name = "vue"
-        },
-        py = {
-            icon = "",
-            color = "#a7c5eb",
-            name = "py"
-        },
-        toml = {
-            icon = "",
-            color = "#61afef",
-            name = "toml"
-        },
-        lock = {
-            icon = "",
-            color = "#DE6B74",
-            name = "lock"
-        },
-        zip = {
-            icon = "",
-            color = "#EBCB8B",
-            name = "zip"
-        },
-        xz = {
-            icon = "",
-            color = "#EBCB8B",
-            name = "xz"
-        },
-        deb = {
-            icon = "",
-            color = "#a3b8ef",
-            name = "deb"
-        },
-        rpm = {
-            icon = "",
-            color = "#fca2aa",
-            name = "rpm"
-        }
-    }
-}
 
 -- Bufferline
 
@@ -173,7 +61,7 @@ require "nvim-web-devicons".setup {
 
 local bar_bg = "#002b36"
 local activeBuffer_bg = "#657b83"
-local inactiveBuffer_bg = "#073642"
+local inactiveBuffer_bg = "#1D1F21"
 local activeBuffer_fg = "#fdf6e3"
 local visibleBuffer_fg = "#eee8d5"
 local inactiveBuffer_fg = "#93a1a1"
@@ -413,8 +301,8 @@ local gls = gl.section
 gl.short_line_list = {"NvimTree", "minimap"} -- keeping this table { } as empty will show inactive statuslines
 
 local colors = {
-    bg = "#073642",
-    line_bg = "#073642",
+    bg = "#1D1F21",
+    line_bg = "#1D1F21",
     fg = "#839496",
     fg_green = "#859900",
     fg_dark = "#002b36";
@@ -896,7 +784,7 @@ function _G.completions()
 end
 
 local base16 = require "base16"
-base16(base16.themes["solarized-dark"], true)
+base16(base16.themes["dracula"], true)
 
 
 -- blankline
@@ -906,7 +794,7 @@ g.indent_blankline_char = "▏"
 g.indent_blankline_use_treesitter = true
 g.indent_blankline_show_current_context = true
 
-cmd "highlight IndentBlanklineChar guifg=#073642 gui=nocombine"
+cmd "highlight IndentBlanklineChar guifg=#1D1F21 gui=nocombine"
 
 g.indent_blankline_filetype_exclude = { "help", "terminal" }
 g.indent_blankline_buftype_exclude = { "terminal" }
@@ -1016,16 +904,16 @@ function set_highlights()
   cmd "hi Comment guifg=#657b83"
 
   cmd "hi SignColumn guibg=NONE"
-  cmd "hi VertSplit guibg=NONE guifg=#073642"
-  cmd "hi EndOfBuffer guifg=#073642"
+  cmd "hi VertSplit guibg=NONE guifg=#1D1F21"
+  cmd "hi EndOfBuffer guifg=#1D1F21"
   cmd "hi PmenuSel guibg=#859900"
   cmd "hi Pmenu  guibg=#002b36"
 
   cmd "hi Normal guibg=NONE ctermbg=NONE"
   -- cmd "hi Normal guibg=#002b36"
 
-  cmd "hi CursorLine guibg=#073642"
-  cmd "hi ColorColumn guibg=#073642"
+  cmd "hi CursorLine guibg=#1D1F21"
+  cmd "hi ColorColumn guibg=#1D1F21"
 end
 set_highlights()
 
@@ -1082,41 +970,8 @@ end
 
 map("n", "<leader>a", ":NvimTreeToggle<CR>", opt)
 
--- local tree_cb = require'nvim-tree.config'.nvim_tree_callback
--- vim.g.nvim_tree_bindings = {
---   { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
---   { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
---   { key = "<C-v>",                        cb = tree_cb("vsplit") },
---   { key = "<C-x>",                        cb = tree_cb("split") },
---   { key = "<C-t>",                        cb = tree_cb("tabnew") },
---   { key = "<",                            cb = tree_cb("prev_sibling") },
---   { key = ">",                            cb = tree_cb("next_sibling") },
---   { key = "P",                            cb = tree_cb("parent_node") },
---   { key = "<BS>",                         cb = tree_cb("close_node") },
---   { key = "<S-CR>",                       cb = tree_cb("close_node") },
---   { key = "<Tab>",                        cb = tree_cb("preview") },
---   { key = "K",                            cb = tree_cb("first_sibling") },
---   { key = "J",                            cb = tree_cb("last_sibling") },
---   { key = "I",                            cb = tree_cb("toggle_ignored") },
---   { key = "H",                            cb = tree_cb("toggle_dotfiles") },
---   { key = "R",                            cb = tree_cb("refresh") },
---   { key = "a",                            cb = tree_cb("create") },
---   { key = "d",                            cb = tree_cb("remove") },
---   { key = "r",                            cb = tree_cb("rename") },
---   { key = "<C-r>",                        cb = tree_cb("full_rename") },
---   { key = "x",                            cb = tree_cb("cut") },
---   { key = "c",                            cb = tree_cb("copy") },
---   { key = "p",                            cb = tree_cb("paste") },
---   { key = "y",                            cb = tree_cb("copy_name") },
---   { key = "Y",                            cb = tree_cb("copy_path") },
---   { key = "gy",                           cb = tree_cb("copy_absolute_path") },
---   { key = "[c",                           cb = tree_cb("prev_git_item") },
---   { key = "]c",                           cb = tree_cb("next_git_item") },
---   { key = "-",                            cb = tree_cb("dir_up") },
---   { key = "q",                            cb = tree_cb("close") },
---   { key = "g?",                           cb = tree_cb("toggle_help") },
--- }
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+
 require'nvim-tree'.setup {
   side = "left",
   width = 25,
@@ -1184,36 +1039,8 @@ require'nvim-tree'.setup {
 
 cmd "hi NvimTreeFolderIcon guifg = #268bd2"
 cmd "hi NvimTreeFolderName guifg = #268bd2"
-cmd "hi NvimTreeIndentMarker guifg=#073642"
+cmd "hi NvimTreeIndentMarker guifg=#1D1F21"
 
--- Gitsigns
-require("gitsigns").setup {
-    signs = {
-        add = {hl = "DiffAdd", text = "▌", numhl = "GitSignsAddNr"},
-        change = {hl = "DiffChange", text = "▌", numhl = "GitSignsChangeNr"},
-        delete = {hl = "DiffDelete", text = "_", numhl = "GitSignsDeleteNr"},
-        topdelete = {hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr"},
-        changedelete = {hl = "DiffChange", text = "~", numhl = "GitSignsChangeNr"}
-    },
-    numhl = false,
-    keymaps = {
-        -- Default keymap options
-        noremap = true,
-        buffer = true,
-        ["n ]c"] = {expr = true, '&diff ? \']c\' : \'<cmd>lua require"gitsigns".next_hunk()<CR>\''},
-        ["n [c"] = {expr = true, '&diff ? \'[c\' : \'<cmd>lua require"gitsigns".prev_hunk()<CR>\''},
-        ["n <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-        ["n <leader>hu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-        ["n <leader>hr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-        ["n <leader>hp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-        ["n <leader>hb"] = '<cmd>lua require"gitsigns".blame_line()<CR>'
-    },
-    watch_index = {
-        interval = 100
-    },
-    sign_priority = 5,
-    status_formatter = nil -- Use default
-}
 
 -- LSP_signature
 
@@ -1235,7 +1062,7 @@ vim.api.nvim_exec([[
 ]], false)
 
 -- inactive statuslines as thin splitlines
-cmd("highlight! StatusLineNC gui=underline guibg=NONE guifg=#073642")
+cmd("highlight! StatusLineNC gui=underline guibg=NONE guifg=#1D1F21")
 
 -- cmd "hi clear CursorLine"
 cmd "hi cursorlinenr guibg=NONE guifg=#fdf6e3"
@@ -1256,13 +1083,6 @@ require("zen-mode").setup {
   --   cmd[[Minimap]]
   -- end,
 }
-
--- Minimap
--- g.minimap_width = 10
--- g.minimap_auto_start = 1
--- g.minimap_auto_start_win_enter = 1
--- g.minimap_highlight_range = 1
--- g.minimap_block_buftypes = {'terminal', 'help'}
 
 -- quick-scope
 g.qs_highlight_on_keys = {'f', 'F', 't', 'T', 'à', 'À'}  -- à doesn't seem to work?
