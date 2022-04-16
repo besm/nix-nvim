@@ -843,7 +843,7 @@ function toggle_writing_mode()
     plugins = {options = {textwidth = 0}}
   })
   if writing_mode then
-    base16(base16.themes["dracula"], true)
+    base16(base16.themes["onedark"], true)
     set_highlights()
     writing_mode = false
   else
