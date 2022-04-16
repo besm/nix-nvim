@@ -487,7 +487,7 @@ gls.right[3] = {
  gls.right[4] = {
      right_LeftRounded = {
         provider = function()
-            return ""
+            return " "
         end,
         highlight = "GalaxyViModeSep",
      }
@@ -514,7 +514,7 @@ gls.right[6] = {
 gls.right[7] = {
     SpecialIconsSep = {
         provider = function()
-          return ""
+          return " "
         end,
         highlight = {colors.yellow, colors.fg}
     }
@@ -820,13 +820,6 @@ ts_config.setup {
 
 local opt = {}
 
--- vim.cmd([[nnoremap <expr> s v:count ? (v:count > 5 ? "m'" . v:count : '') . 's' : 'gs']])
--- vim.cmd([[nnoremap <expr> r v:count ? (v:count > 5 ? "m'" . v:count : '') . 'r' : 'gr']])
-
--- dont copy any deleted text , this is disabled by default so uncomment the below mappings if you want them!
-
--- map("n", "dd", [=[ "_dd ]=], opt)
--- map("v", "dd", [=[ "_dd ]=], opt)
 map("v", "x", [=[ "_x ]=], opt)
 
 -- copy any selected text with pressing y
